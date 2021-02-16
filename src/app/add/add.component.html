@@ -1,0 +1,55 @@
+<p>add works!</p>
+
+
+<form [formGroup]="myForm" novalidate (ngSubmit)="onSubmit()">
+<table border="1">
+  <thead></thead>
+  <tr>
+    <th>Название</th>
+    <th>IP-адрес</th>
+    <th>Принадлежность</th>
+  </tr>
+  <tbody>
+  <tr >
+    <td>
+      <div class="form-group">
+        <input class="form-control" name="name" formControlName="nameSubst"/>
+               <!--[(ngModel)]="subst.nameSubst" />-->
+        <div class="alert alert-danger"
+        *ngIf="myForm.controls['nameSubst'].invalid && myForm.controls['nameSubst'].touched">
+        Не указано наименование
+      </div>
+      </div>
+    </td>
+    <td>
+      <div class="form-group">
+        <input class="form-control" name="ip" formControlName="ip"/>
+               <!--[(ngModel)]="subst.ip" />-->
+        <div class="alert alert-danger"
+             *ngIf="myForm.controls['ip'].invalid && myForm.controls['ip'].touched">
+          Не указано наименование
+        </div>
+      </div>
+    </td>
+    <td>
+      <div class="form-group">
+        <input class="form-control" name="zone" formControlName="zone"/>
+               <!--[(ngModel)]="subst.zone" />-->
+      </div>
+    </td>
+
+  </tr>
+  </tbody>
+</table>
+
+<!--<div class="form-group">
+  <button (click)="buttonAdd()">
+    Добавить
+  </button>
+</div>-->
+<div class="form-group">
+  <button class="btn btn-default" [disabled]="myForm.invalid">
+    Отправить
+  </button>
+</div>
+</form>

@@ -1,0 +1,23 @@
+<p>recent works!</p>
+<h2>Список последних добавленных подстанций</h2>
+
+<table border="1">
+  <thead></thead>
+  <tr>
+    <th>Id</th>
+    <th>Название</th>
+    <th>IP-адрес</th>
+    <th>Принадлежность</th>
+    <th>Сохранил</th>
+  </tr>
+  <tbody>
+  <tr *ngFor="let subst of substs">
+    <td>{{subst.id}}</td>
+    <td>{{subst.nameSubst}}</td>
+    <td>{{subst.ip}}</td>
+    <td>{{subst.zone}}</td>
+    <td>{{subst.user?.username}}</td>
+
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,53 @@
+<p>update works! </p>
+<h2>Список подстанций</h2>
+
+<table border="1">
+  <thead></thead>
+  <tr>
+    <th>Название</th>
+    <th>IP-адрес</th>
+    <th>Принадлежность</th>
+    <th>Сохранил</th>
+  </tr>
+  <tbody>
+  <tr >
+    <td>{{subst.nameSubst}}</td>
+    <td>{{subst.ip}}</td>
+    <td>{{subst.zone}}</td>
+    <td>{{subst.user?.username}}</td>
+
+  </tr>
+  </tbody>
+</table>
+<form (ngSubmit)="onSubmit()">
+  <button> Редактировать подстанцию {{subst.id}} (PUT request)</button>
+  <!--<button class ="GFG" [routerLink]="'/rest/update/' + subst.id"> Сохранить {{subst.id}}</button>
+  -->
+</form>
+<div class="class1">
+  <div class="form-group">
+    <label>Наименование </label>
+    <input class="form-control" name="name"
+           [(ngModel)]="subst.nameSubst" />
+  </div>
+  <div class="form-group">
+    <label>IP-адрес </label>
+    <input class="form-control" name="IP"
+           [(ngModel)]="subst.ip" />
+  </div>
+  <div class="form-group">
+    <label>Принадлеженость </label>
+    <input class="form-control" name="zone"
+           [(ngModel)]="subst.zone" />
+  </div>
+  <div class="form-group">
+    <button (click)="saveUpdate()">
+      Изменить только имя (PATCH request)
+    </button>
+  </div>
+  <div class="form-group">
+    <button (click)="delete()">
+      Удалить (DELETE request)
+    </button>
+  </div>
+</div>

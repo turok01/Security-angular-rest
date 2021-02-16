@@ -1,0 +1,21 @@
+<!-- Style to create button -->
+<style>
+  .GFG {
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+    margin: 5px 2px;
+    cursor: pointer;
+  }
+</style>
+<p>MPS-ui app is running!</p>
+
+<button class="GFG" [routerLink]="'/rest/select'"> Показать все</button>
+<button class ="GFG" [routerLink]="'/rest/recent'"> Показать последние</button>
+<button class ="GFG" [routerLink]="'/rest/' + boxSubst.value"> Показать {{boxSubst.value}}</button>
+<button class="GFG" [routerLink]="'/rest/add'"> Добавить</button>
+
+<input #boxSubst (keyup)="1">
+
+<router-outlet></router-outlet>
+
