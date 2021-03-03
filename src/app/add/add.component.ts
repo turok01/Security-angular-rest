@@ -4,6 +4,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {HttpService} from "../service/http.service";
 import {ActivatedRoute} from "@angular/router";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-add',
@@ -16,6 +17,7 @@ export class AddComponent implements OnInit {
 
   subst : Subst;
   myForm : FormGroup;
+  baseUrl = environment.baseUrl;
 
   constructor(private httpClient:HttpClient, private httpService:HttpService,  private activatedRoute: ActivatedRoute) {
     this.myForm = new FormGroup({
@@ -45,7 +47,7 @@ export class AddComponent implements OnInit {
     this.subst = this.myForm.value as Subst;
     this.subst.user=null;
     this.httpClient.post(
-      'https://localhost:8443/rest/add', this.subst ,{headers: myHeaders}).subscribe(res => {
+      this.baseUrl + '/rest/add', this.subst ,{headers: myHeaders}).subscribe(res => {
         console.log('received ok response from post request');
       },
       error => {
