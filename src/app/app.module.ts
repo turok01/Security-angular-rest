@@ -10,6 +10,7 @@ import { ByIdComponent } from './by-id/by-id.component';
 import {UpdateComponent} from "./update/update.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { AddComponent } from './add/add.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AddComponent } from './add/add.component';
     RecentComponent,
     ByIdComponent,
     UpdateComponent,
-    AddComponent
+    AddComponent,
+    HomeComponent
 
   ],
   imports: [
