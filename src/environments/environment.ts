@@ -5,7 +5,9 @@
 export const environment = {
   production: false,
   //baseUrl: 'http://localhost:8443'
-  baseUrl: 'http://localhost:8888'
+  baseUrl: 'http://localhost:8888',
+  ownUrl: 'http://localhost:4200'
+
 };
 
 /*

@@ -6,6 +6,7 @@ import {RecentComponent} from "./recent/recent.component";
 import {ByIdComponent} from "./by-id/by-id.component";
 import {UpdateComponent} from "./update/update.component";
 import {AddComponent} from "./add/add.component";
+import {HomeComponent} from "./home/home.component";
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:'rest/select', component : SubstListComponent},
   {path:'rest/recent', component : RecentComponent},
   {path:'rest/:id', component : ByIdComponent},
-  {path:'rest/update/:id', component : UpdateComponent}
+  {path:'rest/update/:id', component : UpdateComponent},
+  {path:'rest/home', component : HomeComponent}
 
   //{path: '**', component : AppComponent}
 ];
