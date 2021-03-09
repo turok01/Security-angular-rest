@@ -11,6 +11,7 @@ import {UpdateComponent} from "./update/update.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { AddComponent } from './add/add.component';
 import { HomeComponent } from './home/home.component';
+import {OAuthModule} from 'angular-oauth2-oidc';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    OAuthModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
