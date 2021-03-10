@@ -11,13 +11,19 @@ import {environment} from "../environments/environment";
 export class AppComponent  {
 
   //title = 'MPS-ui';
+  userName: string = null;
   public isLoggedIn = false;
   baseUrl = environment.baseUrl;
 
   constructor(private oauthService: OAuthService) {
     this.oauthService.configure(authConfig);
     this.oauthService.tokenValidationHandler = new JwksValidationHandler();
-    this.oauthService.loadDiscoveryDocumentAndTryLogin();
+    //this.oauthService.loadDiscoveryDocumentAndTryLogin();
+    oauthService.loadDiscoveryDocumentAndLogin().then(_ => {
+      const claims = this.oauthService.getIdentityClaims();
+      this.userName = claims['given_name'];
+      //this.queryApi();
+    });
   }
 
   login() {
