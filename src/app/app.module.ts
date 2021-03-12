@@ -12,6 +12,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { AddComponent } from './add/add.component';
 import { HomeComponent } from './home/home.component';
 import {OAuthModule} from 'angular-oauth2-oidc';
+import {authInterceptorProviders} from "./_helpers/auth.interceptor";
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import {OAuthModule} from 'angular-oauth2-oidc';
     ReactiveFormsModule,
     OAuthModule.forRoot()
   ],
-  providers: [],
+
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
