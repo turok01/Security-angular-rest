@@ -35,7 +35,7 @@ export class AppComponent  {
   constructor(private tokenStorageService: TokenStorageService, private oauthService: OAuthService) { }
 
   ngOnInit(): void {
-    this.oauthService.configure(authConfig);
+    /*this.oauthService.configure(authConfig);
     this.oauthService.tokenValidationHandler = new JwksValidationHandler();
     //this.oauthService.loadDiscoveryDocumentAndTryLogin();
     this.oauthService.loadDiscoveryDocumentAndLogin().then(_ => {
@@ -43,7 +43,7 @@ export class AppComponent  {
       this.userName = claims['given_name'];
       //this.queryApi();
       });
-
+    */
     this.isLoggedIn = !!this.tokenStorageService.getToken();
 
     if (this.isLoggedIn) {
@@ -62,9 +62,10 @@ export class AppComponent  {
   }
 
   login() {
-    this.oauthService.initImplicitFlow();
+  /*  this.oauthService.initImplicitFlow();*/
 
   }
+
 }
 
 export function getParamsObjectFromHash() {

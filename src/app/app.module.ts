@@ -13,6 +13,7 @@ import { AddComponent } from './add/add.component';
 import { HomeComponent } from './home/home.component';
 import {OAuthModule} from 'angular-oauth2-oidc';
 import {authInterceptorProviders} from "./_helpers/auth.interceptor";
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {authInterceptorProviders} from "./_helpers/auth.interceptor";
     ByIdComponent,
     UpdateComponent,
     AddComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
 
   ],
   imports: [

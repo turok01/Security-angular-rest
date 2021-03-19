@@ -9,7 +9,14 @@
   }
 </style>
 <p>MPS-ui app is running!</p>
-
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+    <li class="nav-item"><a href="/login" class="nav-link" routerLink="login">Login</a></li>
+  </ul>
+  <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+    <li class="nav-item"><a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a></li>
+  </ul>
+</nav>
 <button class="GFG" [routerLink]="'/rest/home'"> Home</button>
 <button class="GFG" [routerLink]="'/rest/select'"> Показать все</button>
 <button class ="GFG" [routerLink]="'/rest/recent'"> Показать последние</button>
